@@ -1,0 +1,24 @@
+{
+  "name": "checker",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^10.4.0"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0",
+    "mongoose": "^6.5.3",
+    "nodemon": "^2.0.19"
+  }
+}
