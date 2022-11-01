@@ -1,0 +1,17 @@
+.container {
+  width: 80%;
+  margin: auto;
+  padding-top: 24px;
+}
+
+.test-item {
+  color: #000;
+}
+
+.test-item--error {
+  color: red;
+}
+
+ul {
+  list-style: none;
+}
