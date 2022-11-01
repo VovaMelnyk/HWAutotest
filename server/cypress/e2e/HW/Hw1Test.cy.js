@@ -172,34 +172,187 @@ describe("Перевірка тега main - третя секція", () => {
   });
 
   it("В другому пункті списку зберігається картинка зроблена тегом img з атрибутами 1. src - атрибут в якому просисана адреса до картинки що починається з ./images та закінчується на .jpg  2. alt - атрибут який обовязково має бути заповнений 3. width - атрибут, що містить значення 370 4. height - атрибут, що містьть значення 294", () => {
-    cy.get("main > section:nth-child(3) > ul > li:first-child")
+    cy.get("main > section:nth-child(3) > ul > li:nth-child(2)")
       .find("img")
       .invoke("attr", "src")
       .should("includes", "./images");
-    cy.get("main > section:nth-child(3) > ul > li:first-child")
+    cy.get("main > section:nth-child(3) > ul > li:nth-child(2)")
       .find("img")
       .invoke("attr", "alt")
       .should("not.be.eq", "");
-    cy.get("main > section:nth-child(3) > ul > li:first-child").find("img").invoke("attr", "width").should("eq", "370");
-    cy.get("main > section:nth-child(3) > ul > li:first-child")
+    cy.get("main > section:nth-child(3) > ul > li:nth-child(2)")
+      .find("img")
+      .invoke("attr", "width")
+      .should("eq", "370");
+    cy.get("main > section:nth-child(3) > ul > li:nth-child(2)")
       .find("img")
       .invoke("attr", "height")
       .should("eq", "294");
   });
 
   it("В третьому пункті списку зберігається картинка зроблена тегом img з атрибутами 1. src - атрибут в якому просисана адреса до картинки що починається з ./images та закінчується на .jpg  2. alt - атрибут який обовязково має бути заповнений 3. width - атрибут, що містить значення 370 4. height - атрибут, що містьть значення 294", () => {
-    cy.get("main > section:nth-child(3) > ul > li:first-child")
+    cy.get("main > section:nth-child(3) > ul > li:nth-child(3)")
       .find("img")
       .invoke("attr", "src")
       .should("includes", "./images");
-    cy.get("main > section:nth-child(3) > ul > li:first-child")
+    cy.get("main > section:nth-child(3) > ul > li:nth-child(3)")
       .find("img")
       .invoke("attr", "alt")
       .should("not.be.eq", "");
-    cy.get("main > section:nth-child(3) > ul > li:first-child").find("img").invoke("attr", "width").should("eq", "370");
-    cy.get("main > section:nth-child(3) > ul > li:first-child")
+    cy.get("main > section:nth-child(3) > ul > li:nth-child(3)")
+      .find("img")
+      .invoke("attr", "width")
+      .should("eq", "370");
+    cy.get("main > section:nth-child(3) > ul > li:nth-child(3)")
       .find("img")
       .invoke("attr", "height")
       .should("eq", "294");
+  });
+});
+
+describe("Перевірка тега main - четверта секція", () => {
+  it("Секція №4 містить заголовок h2 з контентом Наша команда", () => {
+    cy.get("main > section:nth-child(4) > h2").should("be.visible");
+    cy.get("main > section:nth-child(4) > h2").should("have.text", "Наша команда");
+  });
+
+  it("В секції №4 після заголовка є список працівників зроблений через тег ul", () => {
+    cy.get("main > section:nth-child(4) > ul ").should("be.visible");
+  });
+
+  it("Список працівників має 4 елементи li", () => {
+    cy.get("main > section:nth-child(4) > ul").children("li").should("have.length", 4);
+  });
+
+  it("В першому пункті списку зберігається картинка зроблена тегом img з атрибутами 1) src - атрибут в якому просисана адреса до картинки що починається з ./images та закінчується на .jpg 2) alt - атрибут який обовязково має бути заповнений 3) width - атрибут, що містить значення 370 4) height - атрибут, що містьть значення 294", () => {
+    cy.get("main > section:nth-child(4) > ul > li:first-child")
+      .find("img")
+      .invoke("attr", "src")
+      .should("includes", "./images");
+    cy.get("main > section:nth-child(4) > ul > li:first-child")
+      .find("img")
+      .invoke("attr", "alt")
+      .should("not.be.eq", "");
+    cy.get("main > section:nth-child(4) > ul > li:first-child").find("img").invoke("attr", "width").should("eq", "370");
+    cy.get("main > section:nth-child(4) > ul > li:first-child")
+      .find("img")
+      .invoke("attr", "height")
+      .should("eq", "294");
+  });
+
+  it("Також в першому пункті списку є заголовок h3 з контентом Ігор Дем'яненко та параграф p з контентом Product Designer", () => {
+    cy.get("main > section:nth-child(4) > ul > li:first-child").find("h3").should("have.text", "Ігор Дем'яненко");
+    cy.get("main > section:nth-child(4) > ul > li:first-child").find("p").should("have.text", "Product Designer");
+  });
+
+  it("В другому пункті списку зберігається картинка зроблена тегом img з атрибутами 1) src - атрибут в якому просисана адреса до картинки що починається з ./images та закінчується на .jpg 2) alt - атрибут який обовязково має бути заповнений 3) width - атрибут, що містить значення 370 4) height - атрибут, що містьть значення 294", () => {
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(2)")
+      .find("img")
+      .invoke("attr", "src")
+      .should("includes", "./images");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(2)")
+      .find("img")
+      .invoke("attr", "alt")
+      .should("not.be.eq", "");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(2)")
+      .find("img")
+      .invoke("attr", "width")
+      .should("eq", "370");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(2)")
+      .find("img")
+      .invoke("attr", "height")
+      .should("eq", "294");
+  });
+
+  it("Також в другому пункті списку є заголовок h3 з контентом Ольга Рєпіна та параграф p з контентом Frontend Developer", () => {
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(2)").find("h3").should("have.text", "Ольга Рєпіна");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(2)").find("p").should("have.text", "Frontend Developer");
+  });
+
+  it("В третьму пункті списку зберігається картинка зроблена тегом img з атрибутами 1) src - атрибут в якому просисана адреса до картинки що починається з ./images та закінчується на .jpg 2) alt - атрибут який обовязково має бути заповнений 3) width - атрибут, що містить значення 370 4) height - атрибут, що містьть значення 294", () => {
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(3)")
+      .find("img")
+      .invoke("attr", "src")
+      .should("includes", "./images");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(3)")
+      .find("img")
+      .invoke("attr", "alt")
+      .should("not.be.eq", "");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(3)")
+      .find("img")
+      .invoke("attr", "width")
+      .should("eq", "370");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(3)")
+      .find("img")
+      .invoke("attr", "height")
+      .should("eq", "294");
+  });
+
+  it("Також в третьму пункті списку є заголовок h3 з контентом Микола Тарасов та параграф p з контентом  Marketing", () => {
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(3)").find("h3").should("have.text", "Микола Тарасов");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(3)").find("p").should("have.text", "Marketing");
+  });
+
+  it("В четвертому пункті списку зберігається картинка зроблена тегом img з атрибутами 1) src - атрибут в якому просисана адреса до картинки що починається з ./images та закінчується на .jpg 2) alt - атрибут який обовязково має бути заповнений 3) width - атрибут, що містить значення 370 4) height - атрибут, що містьть значення 294", () => {
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(4)")
+      .find("img")
+      .invoke("attr", "src")
+      .should("includes", "./images");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(4)")
+      .find("img")
+      .invoke("attr", "alt")
+      .should("not.be.eq", "");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(4)")
+      .find("img")
+      .invoke("attr", "width")
+      .should("eq", "370");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(4)")
+      .find("img")
+      .invoke("attr", "height")
+      .should("eq", "294");
+  });
+
+  it("Також в четвертому пункті списку є заголовок h3 з контентом Михайло Єрмаков та параграф p з контентом   UI Designer", () => {
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(3)").find("h3").should("have.text", "Михайло Єрмаков");
+    cy.get("main > section:nth-child(4) > ul > li:nth-child(3)").find("p").should("have.text", " UI Designer");
+  });
+});
+
+describe("Перевірка футера", () => {
+  it("Першим елементом футера є логотип, зроблений посилання а з атрибутом href=”./index.html” та контентом WebStudio", () => {
+    cy.get("body > footer > a").invoke("attr", "href").should("eq", "./index.html");
+    cy.get("body > footer > a").should("have.text", "WebStudio");
+  });
+
+  it("Другим елементом футера є тег address", () => {
+    cy.get("body > footer > address").should("be.visible");
+  });
+
+  it("Всередині тега addressss є список ul з трьома елементами li", () => {
+    cy.get("body > footer > address > ul").children().should("have.length", 3);
+  });
+
+  it("В першому елементі списку знаходиться посилання з 1) атрибутом href=”” в якому міститься посилання на гугл карту 2) атрибутом target=”_blank” для відкриття посилання в новій вкладці 3) атрибутом rel=”noopener noreferrer nofollow” для захисту сайту 4) контентом м. Київ, пр-т Лесі Українки, 26", () => {
+    cy.get("body > footer > address > ul > li:first-child").find("a").invoke("attr", "href");
+    should("not.be.eq", "");
+    cy.get("body > footer > address > ul > li:first-child").find("a").invoke("attr", "target");
+    should("eq", "_blank");
+    cy.get("body > footer > address > ul > li:first-child").find("a").invoke("attr", "rel");
+    should("eq", "noopener noreferrer nofollow");
+    cy.get("body > footer > address > ul > li:first-child")
+      .find("a")
+      .should("have.text", "м. Київ, пр-т Лесі Українки, 26");
+  });
+
+  it("В другому елементі списку знаходиться посилання з 1) атрибутом href=”mailto:info@devstudio.com” 2) контентом mailto:info@devstudio.com", () => {
+    cy.get("body > footer > address > ul > li:nth-child(2)").find("a").invoke("attr", "href");
+    should("eq", "mailto:info@devstudio.com");
+    cy.get("body > footer > address > ul > li:nth-child(2)").find("a").should("have.text", "mailto:info@devstudio.com");
+  });
+
+  it("В третьому елементі списку знаходиться посилання з 1) атрибутом href=”tel:+380961111111”без пробілів 2) контентом +38 096 111 11 11 з пробілами для кращого читання", () => {
+    cy.get("body > footer > address > ul > li:nth-child(3)").find("a").invoke("attr", "href");
+    should("eq", "tel:+380961111111");
+    cy.get("body > footer > address > ul > li:nth-child(3)").find("a").should("have.text", "tel:+380961111111");
   });
 });
