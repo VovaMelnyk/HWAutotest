@@ -1,0 +1,15 @@
+header {
+  background-color: #37474f;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+header > div {
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(min-content, max-content));
+  justify-content: space-evenly;
+}
