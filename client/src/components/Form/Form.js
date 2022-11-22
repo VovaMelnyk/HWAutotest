@@ -13,8 +13,8 @@ const Form = ({ setData, setLoader }) => {
     e.preventDefault();
     setLoader(true);
     axios
-      .post("http://localhost:5000/api/postHw", { url: input })
-      .then((result) => setData(result.data?.runs?.[0]))
+      .post("http://localhost:9000/api/postHw", { url: input })
+      .then((result) => console.log(result))
       .catch((err) => console.log(err))
       .finally(() => setLoader(false));
   };
